@@ -83,4 +83,5 @@ nuclei -id phpinfo-files -u localhost:8080 -vv
 
 This command scans the specified URL and reports missing security headers.
 
-![image](https://github.com/user-attachments/assets/93512f34-9695-409f-9286-c72135e54820)
+![image](https://github.com/user-attachments/assets/e9153c77-3db4-41df-9213-354c3418a841)
+
