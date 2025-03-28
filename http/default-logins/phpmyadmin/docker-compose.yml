@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  vulnerable-phpmyadmin:
+    container_name: phpmyadmin
+    build: .
+    ports:
+      - "8080:80"
+    restart: always
