@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  emqx:
+    image: emqx/emqx:latest
+    container_name: emqx
+    ports:
+      - "1883:1883"   # MQTT
+      - "8083:8083"   # HTTP WebSocket
+      - "8084:8084"   # HTTPS WebSocket
+      - "8883:8883"   # MQTT over SSL
+      - "18083:18083" # Dashboard
+    volumes:
+      - emqx_data:/opt/emqx/data
+      - emqx_log:/opt/emqx/log
+    environment:
+      - "EMQX_NODE_NAME=emqx@node1.emqx.io"
+      - "EMQX_CLUSTER__DISCOVERY_STRATEGY=static"
+      - "EMQX_CLUSTER__STATIC__SEEDS=[emqx@node1.emqx.io]"
+
+volumes:
+  emqx_data:
+  emqx_log:
