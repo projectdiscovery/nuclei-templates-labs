@@ -96,4 +96,5 @@ nuclei -id http-missing-security-headers -u localhost:8080 -vv
 
 This command scans the specified URL and reports missing security headers.
 
+![image](https://github.com/user-attachments/assets/534fd12d-0e90-45f6-9eb3-1d34f047cf66)
 
