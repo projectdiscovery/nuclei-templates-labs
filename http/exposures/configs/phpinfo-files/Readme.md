@@ -5,7 +5,7 @@ This lab demonstrates a common web server misconfiguration where PHP info pages 
 
 ## Reference:
 - [PHP: phpinfo() Manual](https://www.php.net/manual/en/function.phpinfo.php)
-- [CWE-200: Information Exposure]([https://cheatsheetseries.owasp.org/cheatsheets/Information_Exposure_Cheat_Sheet.html](https://cwe.mitre.org/data/definitions/200.html))
+- [CWE-200: Information Exposure]([https://cheatsheetseries.owasp.org/cheatsheets/Information_Exposure_Cheat_Sheet.html](https://cwe.mitre.org/data/definitions/200.html)
 
 ## Vulnerable Setup
 
