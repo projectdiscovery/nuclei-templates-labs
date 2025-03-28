@@ -12,7 +12,7 @@ Web servers and applications often fail to implement essential security headers,
 - Deploy a vulnerable Nginx server with missing security headers.
 
 ```bash
-docker compose up -d
+docker-compose up -d
 ```
 
 - Once started, the server will be available on http://localhost:8080 without security headers.
