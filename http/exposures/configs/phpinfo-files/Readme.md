@@ -15,7 +15,7 @@ This lab demonstrates a common web server misconfiguration where PHP info pages 
 docker compose up -d
 ```
 
--Once started, the server will be available at:
+Once started, the server will be available at:
 
 - http://localhost:8080/phpinfo.php
 
@@ -83,5 +83,4 @@ nuclei -id phpinfo-files -u localhost:8080 -vv
 
 This command scans the specified URL and reports missing security headers.
 
-
-
+![image](https://github.com/user-attachments/assets/93512f34-9695-409f-9286-c72135e54820)
