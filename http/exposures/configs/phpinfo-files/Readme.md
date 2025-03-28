@@ -12,7 +12,7 @@ This lab demonstrates a common web server misconfiguration where PHP info pages 
 - Deploy a vulnerable Apache/PHP server with multiple exposed phpinfo pages:
 
 ```bash
-docker compose up -d
+docker-compose up -d
 ```
 
 Once started, the server will be available at:
