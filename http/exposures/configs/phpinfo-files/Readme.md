@@ -44,34 +44,68 @@ curl http://localhost:8080/phpinfo.php | grep "PHP Version"
 
 ## Steps to Write Nuclei Template
 
-**Template Logic**
+**HTTP Request Definition**
 
-The detection uses:
+- The template uses an HTTP `GET` request to check if the target has exposed `phpinfo()` pages.
 
-- Multiple common phpinfo file paths
-
-- Content matching for "PHP Version" and "PHP Extension"
-
-- Version number extraction via regex
+- The `path` parameter allows dynamic URL formation using predefined paths.
 
 ```yaml
 http:
   - method: GET
     path:
-      - "/phpinfo.php"
-      - "/test.php"
-      - "/info.php"
+      - "{{BaseURL}}{{paths}}"
+```
+
+**Defining Payloads (Target Paths)**
+
+- This section specifies common file names where `phpinfo()` pages are likely to be exposed.
+
+- The template will test multiple URLs at the target site to detect misconfigurations.
+
+```yaml
+    payloads:
+      paths:
+        - "/phpinfo.php"
+        - "/test.php"
+        - "/info.php"
+```
+
+**Matchers for Detection**
+
+- `matchers-condition: and` ensures that both conditions must be met for detection.
+
+- The template looks for two specific keywords in the response body: `"PHP Extension"` and `"PHP Version"`, The HTTP response must return `200 OK`.
+
+```yaml
+    matchers-condition: and
     matchers:
       - type: word
+        part: body
         words:
-          - "PHP Version"
           - "PHP Extension"
+          - "PHP Version"
         condition: and
+
       - type: status
         status:
           - 200
 ```
 
+**Extracting PHP Version Information**
+
+- The extractor section uses a regular expression (regex) to retrieve the PHP version from the page content.
+
+- This helps in identifying outdated or vulnerable PHP versions that might be exploited.
+
+```yaml
+    extractors:
+      - type: regex
+        part: body
+        group: 1
+        regex:
+          - '>PHP Version <\/td><td class="v">([0-9.]+)'
+```
 
 ## Nuclei Template URL : [phpinfo-files](https://github.com/projectdiscovery/nuclei-templates/blob/main/http/exposures/configs/phpinfo-files.yaml)
 
