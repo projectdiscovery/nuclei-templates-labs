@@ -96,3 +96,5 @@ data: /messages/?session_id=512b026054d04af78c834cb9a5af4e97
 ```bash
 nuclei -id exposed-mcp-sse-server -u http://localhost:8080 -vv
 ```
+
+![image](https://github.com/user-attachments/assets/eace971f-9eeb-4e5c-9d14-cd735925dab8)
