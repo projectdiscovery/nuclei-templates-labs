@@ -129,3 +129,5 @@ attack: pitchfork
 ```bash
 nuclei -id exposed-mcp-server -u http://localhost:8080 -vv
 ```
+
+![image](https://github.com/user-attachments/assets/5399a73a-1276-41b8-81a9-6afdd1b6f1f3)
