@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  phpinfo-exposure:
+    image: php:7.4-apache
+    container_name: phpinfo-files-exposure-lab
+    ports:
+      - "8080:80"
+    command: >
+      bash -c "
+      echo '<?php phpinfo(); ?>' > /var/www/html/phpinfo.php &&
+      echo '<?php phpinfo(); ?>' > /var/www/html/test.php &&
+      echo '<?php phpinfo(); ?>' > /var/www/html/info.php &&
+      echo '<?php phpinfo(); ?>' > /var/www/html/php_info.php &&
+      echo '<?php phpinfo(); ?>' > /var/www/html/p.php &&
+      chown -R www-data:www-data /var/www/html &&
+      apache2-foreground
+      "
