@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  ray:
+    image: rayproject/ray:2.8.0-py310-cu121
+    ports:
+      - "8265:8265"
+    command: >
+      bash -c "ray start --head --dashboard-host=0.0.0.0 && tail -f /dev/null"
+    tty: true
