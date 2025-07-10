@@ -1,10 +1,7 @@
 # Exposed MCP Server
 
 ## Description:
-Detects exposed Machine Control Protocol (MCP) servers through JSON-RPC 2.0 API endpoints.
-MCP servers often provide administrative access to AI tools, LLM systems, or other automation infrastructure.
-Exposed MCP interfaces can lead to unauthorized access, information disclosure, and potential system compromise.
-This template tests multiple detection methods including tools/list, rpc.discover, resources/list, and prompts/list.
+Detects exposed Machine Control Protocol (MCP) servers through JSON-RPC 2.0 API endpoints.MCP servers often provide administrative access to AI tools, LLM systems, or other automation infrastructure.Exposed MCP interfaces can lead to unauthorized access, information disclosure, and potential system compromise.This template tests multiple detection methods including tools/list, rpc.discover, resources/list, and prompts/list.
 
 ## Reference:
 - https://modelcontextprotocol.io/specification/2025-03-26/basic/transports#streamable-http
@@ -130,4 +127,4 @@ attack: pitchfork
 nuclei -id exposed-mcp-server -u http://localhost:8080 -vv
 ```
 
-![image](https://github.com/user-attachments/assets/5399a73a-1276-41b8-81a9-6afdd1b6f1f3)
+![image](https://github.com/user-attachments/assets/980ff913-41c7-4668-a4da-1b0a4742c8e2)
