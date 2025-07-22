@@ -55,7 +55,7 @@ The repository structure categorizes labs by vulnerability types and protocols:
 ls -la
 
 # Navigate and explore labs
-cd http/cve/2024/
+cd http/cves/2024/
 ls
 ```
 
@@ -70,7 +70,7 @@ Each lab contains:
 Navigate to your chosen lab and launch the environment:
 
 ```bash
-cd http/cve/2024/CVE-2024-55416
+cd http/cves/2024/CVE-2024-55416
 docker-compose up -d
 ```
 
